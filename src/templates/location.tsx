@@ -23,10 +23,12 @@ import Banner from "../components/banner";
 import Details from "../components/details";
 import Hours from "../components/hours";
 import List from "../components/list";
+import Header from "../components/header";
 import PageLayout from "../components/page-layout";
 import StaticMap from "../components/static-map";
-import Favicon from "../public/yext-favicon.ico";
+import Favicon from "../public/guuci-favicon.ico";
 import "../index.css";
+import Card from "../components/card";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -147,10 +149,14 @@ const Location: Template<TemplateRenderProps> = ({
     c_shapeDesign,
     photoGallery,
   } = document;
+  const images = photoGallery.map((img:any)=>{
+    return <img src={img.image.url}/>
+  })
 
   return (
     <>
-  <div className="text-amber-600">{name}</div>
+    <Header/>
+  {/* <div className="text-amber-600">{name}</div>
     <br></br>model: {c_model}
     <br></br>Currence{price.currencyCode} 
     <div className="text-amber-600">Price: {price.value}</div>
@@ -159,33 +165,29 @@ const Location: Template<TemplateRenderProps> = ({
     <br></br>Color:{color}
     <br></br>usages: {c_usage_Application}
     <br></br>Descrpetion:{description}
-    
-      {/* <PageLayout _site={_site}>
-        <Banner name={name} address={address} />
+    <img src={logo.image.url} style={{height:"320px",width:"320px"}}></img> */}
+
+<div>
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-2 gap-x-10 gap-y-10">
+              <div
+                className="bg-gray-100 p-2"
+                style={{ color: "black", fontFamily: "cursive" }}
+              >{`product name :  ${name}`}</div>
               <div className="bg-gray-100 p-2">
-                <Details address={address} phone={mainPhone}></Details>
-                {services && <List list={services}></List>}
+                <p>{`price :    $${document?.price.value}`}</p>
               </div>
-              <div className="bg-gray-100 p-2">
-                {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
-              </div>
-              {geocodedCoordinate && (
-                <StaticMap
-                  latitude={geocodedCoordinate.latitude}
-                  longitude={geocodedCoordinate.longitude}
-                ></StaticMap>
-              )}
               <div className="bg-gray-100 p-2">
                 <div className="text-xl font-semibold">{`About ${name}`}</div>
                 <p className="pt-4">{description}</p>
               </div>
+              <div className="bg-gray-100" style={{height:"320px",width:"320px"}}>{images}</div>
             </div>
           </div>
         </div>
-      </PageLayout> */}
+      </div>
+
     </>
   );
 };
