@@ -72,9 +72,7 @@ export const config: TemplateConfig = {
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   return document.slug
     ? document.slug
-    : `${document.locale}/${document.address.region}/${document.address.city}/${
-        document.address.line1
-      }-${document.id.toString()}`;
+    : `${document.id.toString()}`;
 };
 
 /**
@@ -152,16 +150,16 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-{name}
+  <div className="text-amber-600">{name}</div>
     <br></br>model: {c_model}
     <br></br>Currence{price.currencyCode} 
-    <br></br>Price: {price.value} 
+    <div className="text-amber-600">Price: {price.value}</div>
     <br></br>shape: {c_shapeDesign}
     {c_displayTpye}
     <br></br>Color:{color}
     <br></br>usages: {c_usage_Application}
     <br></br>Descrpetion:{description}
-    { photoGallery}
+    
       {/* <PageLayout _site={_site}>
         <Banner name={name} address={address} />
         <div className="centered-container">
