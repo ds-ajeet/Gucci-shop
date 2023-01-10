@@ -62,12 +62,12 @@ const Footer = () => {
           </a>
         </span>
       </div>
-      <div className="w-full px-8 mt-4 rounded-b-lg bg-blueGray-50">
-        <div className="container inline-flex flex-col flex-wrap items-center px-5 py-6 mx-auto sm:flex-row">
+      <div className="w-full px-8 mt-4 rounded-b-lg bg-blueGray-20">
+        <div className="container inline-flex flex-col flex-wrap items-center px-2 py-15 mx-auto sm:flex-row">
           <p className="mx-auto text-sm text-center text-black sm:text-left ">
             {" "}
-            © 2021{" "}
-          </p>
+            copyright © 2023{" "}
+            </p>
         </div>
       </div>
     </footer>

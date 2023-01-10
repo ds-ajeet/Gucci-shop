@@ -24,12 +24,14 @@ import Details from "../components/details";
 import Hours from "../components/hours";
 import List from "../components/list";
 import Header from "../components/header";
+import Footer from "../components/footer";
 import PageLayout from "../components/page-layout";
 import StaticMap from "../components/static-map";
 import Favicon from "../public/guuci-favicon.ico";
 import "../index.css";
 import Card from "../components/card";
-
+// import App from "../components/slider-banner";
+import PhotoGallery from "../components/photo-gallery";
 /**
  * Required when Knowledge Graph data is used for a template.
  */
@@ -156,6 +158,7 @@ const Location: Template<TemplateRenderProps> = ({
   return (
     <>
     <Header/>
+   <Banner/>
   {/* <div className="text-amber-600">{name}</div>
     <br></br>model: {c_model}
     <br></br>Currence{price.currencyCode} 
@@ -174,19 +177,38 @@ const Location: Template<TemplateRenderProps> = ({
               <div
                 className="bg-gray-100 p-2"
                 style={{ color: "black", fontFamily: "cursive" }}
-              >{`product name :  ${name}`}</div>
-              <div className="bg-gray-100 p-2">
-                <p>{`price :    $${document?.price.value}`}</p>
+              >{`product name :  ${name}`}
+              {<br/>}
+              {<br/>}
+
+              {`product Model :  ${c_model}`}
+              {<br/>}
+              {<br/>}
+              {`price :  ${document?.price.value}`}
+              {<br/>}
+              {<br/>}
+              {`Description :  ${description}`}
               </div>
-              <div className="bg-gray-100 p-2">
+              {/*<div
+                className="bg-gray-100 p-2"
+                style={{ color: "black", fontFamily: "cursive" }}
+              >{`product Model :  ${c_model}`}
+              </div>*/}
+              {/*<div className="bg-gray-100 p-2">
+                <p>{`price :  ${document?.price.value}`}</p>
+              </div>*/}
+              {/*<div className="bg-gray-100 p-2">
                 <div className="text-xl font-semibold">{`About ${name}`}</div>
                 <p className="pt-4">{description}</p>
-              </div>
-              <div className="bg-gray-100" style={{height:"320px",width:"320px"}}>{images}</div>
+              </div>*/}
+              <div className="bg-gray-10" style={{height:"320px",width:"320px"}}>{images}</div>
             </div>
           </div>
         </div>
       </div>
+      <Footer/>
+      {/* <PhotoGallery/> */}
+
 
     </>
   );
